@@ -219,55 +219,68 @@ create_plot <- function(working_dir){
     
     ## 6) Plot data
     cat("\n\n Step 6. Plotting data to file, 'plot4.png' in the working folder.\n")
-    png(file="plot4.png",width=480,height=480,units="px",res=96)
+    png(file="plot4.png",width=480,height=480,units="px")
     
-    par(mrows=c(2,2))
+    par(mfrow=c(2,2))
     
-    #plot1
+    #plot 1
     plot(data$Date,data$Global_active_power
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="black"
          ,xlab=""
-         ,ylab="Global Active Power (kilowatts)"
-         
+         ,ylab="Global Active Power"
     )
     
-    #plot3
-    par(pt.lwd=10)
+    
+    
+    #plot 2
+    plot(data$Date,data$Voltage
+         ,type="l"
+         ,col="black"
+         ,xlab="datetime"
+         ,ylab="Voltage"
+    )
+    
+    
+    
+    #plot 3
+    #par(pt.lwd=10)
     plot(data$Date,data$Sub_metering_1
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="black"
          ,xlab=""
          ,ylab="Energy sub metering"
-         ,ylim=c(0,40)
+         ,ylim=c(0,39)
     )  
     par(new = T)
     plot(data$Date,data$Sub_metering_2
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="red"
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,40)
+         ,ylim=c(0,39)
     )
     par(new = T)
     plot(data$Date,data$Sub_metering_3
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="blue"
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,40)
+         ,ylim=c(0,39)
     )
-    legend("topright",lwd=1,seg.len=2,cex=0.75,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    legend("topright",bty="n",lwd=1,seg.len=2,cex=0.75,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    
+    
+    
+    #plot 4
+    plot(data$Date,data$Global_reactive_power
+         ,type="l"
+         ,col="black"
+         ,xlab="datetime"
+         ,ylab="Global_reactive_power"
+    )
     
     dev.off()
     
