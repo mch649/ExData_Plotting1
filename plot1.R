@@ -30,7 +30,6 @@ exit_script <- function(){
     cat("Pressing ENTER will execute the script, 'Q' will quit.\n")
     response <- toupper(readline("Press ENTER to continue, Q to quit: "))
     if(response=="Q"){cat("Goodbye");stop()}#if    
-    if(response=="Q"){cat("Goodbye"); q()}#if
 }#exit_script()
 
 
@@ -75,9 +74,16 @@ unzip_data <- function(filename){
 prepare_data <- function(filename){
     cat("reading and preparing data will take a few moments... please be patient.\n")
     
-    data <- read.csv2(paste(basename(file_path_sans_ext(filename)),".txt",sep=""),header=TRUE,sep=";",na.strings="?",stringsAsFactors=FALSE,skip=66636,nrow=2880,
-                      #,colClasses=c("Date","Date","numeric","numeric","numeric","numeric","numeric","numeric","numeric")
-                      as.is=TRUE)#read.csv2()
+    data <- read.csv2(
+                paste(basename(file_path_sans_ext(filename)),".txt",sep=""),
+                header=TRUE,
+                sep=";",
+                na.strings="?",
+                stringsAsFactors=FALSE,
+                skip=66636,
+                nrow=2880,
+                as.is=TRUE
+            )#read.csv2()
     
     column_names <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
     names(data) <- column_names
@@ -108,10 +114,10 @@ write_datafile <- function(selecteddata,datafilename){
     cat("Would you like a TAB, COMMA, or SPACE delimited output file?")
     response <- toupper(readline("Enter a 'T', 'C' or just press ENTER [T/C/ENTER]: "))
     
-    if(response == 'T'){
+    if(response=='T'){
         extension <- "tab"
         seperator <- "\t"
-    }else if(response == 'C'){
+    }else if(response=='C'){
         extension <- "csv"
         seperator <- ","
     }else{
@@ -122,7 +128,7 @@ write_datafile <- function(selecteddata,datafilename){
     write.table(selecteddata,file=paste(datafilename,".",extension,sep=""),sep=seperator,row.names=FALSE)
     
     cat("\n\nData preparation completed. Prepared data file in working folder named: ",
-        paste(datafilename,extension, sep='.'))
+        paste(datafilename,extension,sep='.'))
 }#write_datafile()
 
 
@@ -183,7 +189,7 @@ create_plot <- function(working_dir){
     exit_script()
         
     ## 2) Prompt for working folder if missing
-    if(working_dir == ""){
+    if(working_dir==""){
         cat("\n\nWorking folder selection.\nRemember this script was meant to run on Windows, so choose an appropriate folder name.")
         working_dir <- get_working_folder()
     }#if

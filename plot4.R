@@ -28,7 +28,6 @@ dependencies <- c("tools","grDevices")
 exit_script <- function(){
     cat("Pressing ENTER will execute the script, 'Q' will quit.\n")
     response <- toupper(readline("Press ENTER to continue, Q to quit: "))
-    #if(response=="Q"){cat("Goodbye");q()}#if  
     if(response=="Q"){cat("Goodbye");stop()}#if    
 }#exit_script()
 
@@ -82,7 +81,6 @@ prepare_data <- function(filename){
         stringsAsFactors=FALSE,
         skip=66636,
         nrow=2880,
-        #,colClasses=c("Date","Date","numeric","numeric","numeric","numeric","numeric","numeric","numeric")
         as.is=TRUE
     )#read.csv2()
     
@@ -117,10 +115,10 @@ write_datafile <- function(s,datafilename){
     cat("Would you like a TAB, COMMA, or SPACE delimited output file?")
     response <- toupper(readline("Enter a 'T', 'C' or just press ENTER [T/C/ENTER]: "))
     
-    if(response == 'T'){
+    if(response=='T'){
         write.table(s,file=paste(datafilename,".tab",sep=""),sep="\t",row.names=FALSE)
         extension <- "tab"
-    }else if(response == 'C'){
+    }else if(response=='C'){
         write.table(s,file=paste(datafilename,".csv",sep=""),sep=",",row.names=FALSE)
         extension <- "csv"
     }else{
@@ -129,7 +127,7 @@ write_datafile <- function(s,datafilename){
     }#if
     
     cat("\n\nData preparation completed. Prepared data file in working folder named: ",
-        paste(datafilename,extension, sep='.'))
+        paste(datafilename,extension,sep='.'))
 }#write_datafile()
 
 
@@ -191,7 +189,7 @@ create_plot <- function(working_dir){
     
     
     ## 2) Prompt for working folder if missing
-    if(working_dir == ""){
+    if(working_dir==""){
         cat("\n\nWorking folder selection.\nRemember this script was meant to run on Windows, so choose an appropriate folder name.")
         working_dir <- get_working_folder()
     }#if
@@ -244,13 +242,12 @@ create_plot <- function(working_dir){
     
     
     #plot 3
-    #par(pt.lwd=10)
     plot(data$Date,data$Sub_metering_1
          ,type="l"
          ,col="black"
          ,xlab=""
          ,ylab="Energy sub metering"
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )  
     par(new = T)
     plot(data$Date,data$Sub_metering_2
@@ -259,7 +256,7 @@ create_plot <- function(working_dir){
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )
     par(new = T)
     plot(data$Date,data$Sub_metering_3
@@ -268,7 +265,7 @@ create_plot <- function(working_dir){
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )
     legend("topright",bty="n",lwd=1,seg.len=2,cex=0.75,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
     
