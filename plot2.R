@@ -264,10 +264,3 @@ if(working_dir==""){
 
 # case 2.
 create_plot(working_dir)
-
-
-
-
-#df = data.frame(date=c("2012-02-01", "2012-02-01", "2012-02-02")) 
-#df$day <- weekdays(as.Date(df$date))
-#http://stackoverflow.com/questions/9216138/find-the-day-of-a-week-in-r
