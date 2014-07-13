@@ -128,7 +128,7 @@ write_datafile <- function(selecteddata,datafilename){
     write.table(selecteddata,file=paste(datafilename,".",extension,sep=""),sep=seperator,row.names=FALSE)
     
     cat("\n\nData preparation completed. Prepared data file in working folder named: ",
-        paste(datafilename,extension, sep='.'))
+        paste(datafilename,extension,sep='.'))
 }#write_datafile()
 
 
@@ -189,7 +189,7 @@ create_plot <- function(working_dir){
     exit_script()
         
     ## 2) Prompt for working folder if missing
-    if(working_dir == ""){
+    if(working_dir==""){
         cat("\n\nWorking folder selection.\nRemember this script was meant to run on Windows, so choose an appropriate folder name.")
         working_dir <- get_working_folder()
     }#if
