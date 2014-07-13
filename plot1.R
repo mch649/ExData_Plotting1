@@ -30,7 +30,6 @@ exit_script <- function(){
     cat("Pressing ENTER will execute the script, 'Q' will quit.\n")
     response <- toupper(readline("Press ENTER to continue, Q to quit: "))
     if(response=="Q"){cat("Goodbye");stop()}#if    
-    if(response=="Q"){cat("Goodbye"); q()}#if
 }#exit_script()
 
 
