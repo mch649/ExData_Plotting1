@@ -222,7 +222,6 @@ create_plot <- function(working_dir){
     cat("\n\n Step 6. Plotting data to file, 'plot3.png' in the working folder.\n")
     png(file="plot3.png",width=480,height=480,units="px",res=96)
     
-    par(pt.lwd=10)
     plot(data$Date,data$Sub_metering_1
          ,type="l"
          ,col="black"
