@@ -15,7 +15,7 @@ filename <- "household_power_consumption.zip"
 #working_dir <- "c:/junk/r"  # give a workspace; THIS IS MY TEST CASE; THE FOLDER ALREADY EXISTS
 working_dir <- "" 
 
-dependencies <- c("tools","grDevices","lattice","ggplot2")
+dependencies <- c("tools","grDevices")
 
 #######################
 ## end script variables
