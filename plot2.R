@@ -116,10 +116,10 @@ write_datafile <- function(s,datafilename){
     cat("Would you like a TAB, COMMA, or SPACE delimited output file?")
     response <- toupper(readline("Enter a 'T', 'C' or just press ENTER [T/C/ENTER]: "))
     
-    if(response == 'T'){
+    if(response=='T'){
         write.table(s,file=paste(datafilename,".tab",sep=""),sep="\t",row.names=FALSE)
         extension <- "tab"
-    }else if(response == 'C'){
+    }else if(response=='C'){
         write.table(s,file=paste(datafilename,".csv",sep=""),sep=",",row.names=FALSE)
         extension <- "csv"
     }else{
@@ -128,7 +128,7 @@ write_datafile <- function(s,datafilename){
     }#if
     
     cat("\n\nData preparation completed. Prepared data file in working folder named: ",
-        paste(datafilename,extension, sep='.'))
+        paste(datafilename,extension,sep='.'))
 }#write_datafile()
 
 
@@ -190,7 +190,7 @@ create_plot <- function(working_dir){
     
     
     ## 2) Prompt for working folder if missing
-    if(working_dir == ""){
+    if(working_dir==""){
         cat("\n\nWorking folder selection.\nRemember this script was meant to run on Windows, so choose an appropriate folder name.")
         working_dir <- get_working_folder()
     }#if
