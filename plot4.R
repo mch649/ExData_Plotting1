@@ -248,7 +248,7 @@ create_plot <- function(working_dir){
          ,col="black"
          ,xlab=""
          ,ylab="Energy sub metering"
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )  
     par(new = T)
     plot(data$Date,data$Sub_metering_2
@@ -257,7 +257,7 @@ create_plot <- function(working_dir){
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )
     par(new = T)
     plot(data$Date,data$Sub_metering_3
@@ -266,7 +266,7 @@ create_plot <- function(working_dir){
          ,xlab=""
          ,ylab=""
          ,axes=F
-         ,ylim=c(0,39)
+         ,ylim=c(0,40)
     )
     legend("topright",bty="n",lwd=1,seg.len=2,cex=0.75,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
     
