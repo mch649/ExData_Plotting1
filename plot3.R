@@ -29,7 +29,6 @@ dependencies <- c("tools","grDevices")
 exit_script <- function(){
     cat("Pressing ENTER will execute the script, 'Q' will quit.\n")
     response <- toupper(readline("Press ENTER to continue, Q to quit: "))
-    #if(response=="Q"){cat("Goodbye");q()}#if  
     if(response=="Q"){cat("Goodbye");stop()}#if    
 }#exit_script()
 
