@@ -74,9 +74,16 @@ unzip_data <- function(filename){
 prepare_data <- function(filename){
     cat("reading and preparing data will take a few moments... please be patient.\n")
     
-    data <- read.csv2(paste(basename(file_path_sans_ext(filename)),".txt",sep=""),header=TRUE,sep=";",na.strings="?",stringsAsFactors=FALSE,skip=66636,nrow=2880,
-                      #,colClasses=c("Date","Date","numeric","numeric","numeric","numeric","numeric","numeric","numeric")
-                      as.is=TRUE)#read.csv2()
+    data <- read.csv2(
+                paste(basename(file_path_sans_ext(filename)),".txt",sep=""),
+                header=TRUE,
+                sep=";",
+                na.strings="?",
+                stringsAsFactors=FALSE,
+                skip=66636,
+                nrow=2880,
+                as.is=TRUE
+            )#read.csv2()
     
     column_names <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
     names(data) <- column_names
