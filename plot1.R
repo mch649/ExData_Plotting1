@@ -114,10 +114,10 @@ write_datafile <- function(selecteddata,datafilename){
     cat("Would you like a TAB, COMMA, or SPACE delimited output file?")
     response <- toupper(readline("Enter a 'T', 'C' or just press ENTER [T/C/ENTER]: "))
     
-    if(response == 'T'){
+    if(response=='T'){
         extension <- "tab"
         seperator <- "\t"
-    }else if(response == 'C'){
+    }else if(response=='C'){
         extension <- "csv"
         seperator <- ","
     }else{
