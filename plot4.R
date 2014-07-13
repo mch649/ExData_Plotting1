@@ -81,7 +81,6 @@ prepare_data <- function(filename){
         stringsAsFactors=FALSE,
         skip=66636,
         nrow=2880,
-        #,colClasses=c("Date","Date","numeric","numeric","numeric","numeric","numeric","numeric","numeric")
         as.is=TRUE
     )#read.csv2()
     
