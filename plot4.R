@@ -242,7 +242,6 @@ create_plot <- function(working_dir){
     
     
     #plot 3
-    #par(pt.lwd=10)
     plot(data$Date,data$Sub_metering_1
          ,type="l"
          ,col="black"
