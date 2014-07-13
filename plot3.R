@@ -228,6 +228,7 @@ create_plot <- function(working_dir){
          ,xlab=""
          ,ylab="Energy sub metering"
          ,ylim=c(0,40)
+         ,cex.lab=0.75
     )  
     par(new = T)
     plot(data$Date,data$Sub_metering_2
