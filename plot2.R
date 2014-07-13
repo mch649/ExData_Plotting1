@@ -222,8 +222,6 @@ create_plot <- function(working_dir){
     png(file="plot2.png",width=480,height=480,units="px")
     
     plot(data$Date,data$Global_active_power
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="black"
          ,xlab=""
