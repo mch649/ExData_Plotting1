@@ -224,8 +224,6 @@ create_plot <- function(working_dir){
     
     par(pt.lwd=10)
     plot(data$Date,data$Sub_metering_1
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="black"
          ,xlab=""
@@ -234,8 +232,6 @@ create_plot <- function(working_dir){
     )  
     par(new = T)
     plot(data$Date,data$Sub_metering_2
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="red"
          ,xlab=""
@@ -245,8 +241,6 @@ create_plot <- function(working_dir){
     )
     par(new = T)
     plot(data$Date,data$Sub_metering_3
-         ,data=data
-         ,group=weekdays(data$Date)
          ,type="l"
          ,col="blue"
          ,xlab=""
